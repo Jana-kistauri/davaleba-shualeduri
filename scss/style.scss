@@ -1,3 +1,148 @@
-body {
-    background-color: rosybrown;
+@import './reset.scss';
+
+$color-01: #222222;
+$color-02: #FFFFFF;
+$color-03: #FF2288;
+
+$number-01: 1rem;
+$number-02: 2rem;
+$number-03: 3rem;
+
+// dafaruli
+%active {
+    background-color: $color-03;
+    border-radius: 10px;
+}
+
+@mixin flex($horizontal, $vertical) {
+    display: flex;
+    justify-content: $horizontal;
+    align-items: $vertical;
+}
+
+@mixin inline($horizontal) {
+    display: inline-block;
+    vertical-align: $horizontal;
+}
+
+@mixin font($font-size, $font-family, $font-weight,$line-height, $letter-spacing) {
+    font-size: $font-size;
+    font-family: $font-family;
+    font-weight: $font-weight;
+    line-height: $line-height;
+    letter-spacing: $letter-spacing;
+}
+
+.page-container {
+    @include flex(space-between, start);
+
+    // page aside styles
+    .page-aside {
+        width: 20vw;
+        padding: 3rem 3rem 5rem 3rem;
+        @media (max-width: 1500px) {
+            padding: 1rem 1rem 5rem 1rem;
+        }
+
+        background-color: $color-01;
+
+        a, h2, h3 {
+            color: $color-02;
+        }
+
+        a, img {
+            @include inline(middle)
+        }
+
+        img {
+            margin-right: 15px;
+        }
+
+        // aside top area
+        .aside-top {
+            @include flex(space-between, center);
+            margin-bottom: 3rem;
+
+            .logo span {
+                @include font(24px, Avenir, bold, 32px, 0)
+            }
+    
+            .logo {
+                @include font(24px, Avenir, 400, 32px, 0)
+            }
+
+            .burger-icon {
+                cursor: pointer;
+            }
+        }
+        // aside middle area
+        .aside-middle {
+            .navbar-ul li  {
+                padding: 1rem 2rem 1rem 0.7rem;
+                margin: 2.3rem 0;
+                width: 100%;
+                &:first-child {
+                    @extend %active;
+                }
+                
+            }
+            margin-bottom: 50px;
+        }
+        // aside bottom area
+        .aside-bottom {
+            padding: 1rem 2rem 1rem 0.7rem;
+            h2 {
+                &:first-child {
+                    @include font(12px, "Avenir heavy", 400, 16px, 0);
+                    margin-bottom: 25px;
+                }
+            }
+            
+            li {
+                margin: 20px 0;
+            }
+
+        }
+        h3 {
+            cursor: pointer;
+            @include font(14px, Avenir, 400, 19px, 0)
+        }
+        
+    }
+
+    .page-main-area {
+        width: 80vw;
+
+        .page-header {
+            @include flex(space-between, center);
+            
+            * {
+                @include inline(middle);            
+            }
+            // search div area
+
+            // 
+            // search input icons vasworebdiiii
+            // 
+            // 
+            // 
+            .search-div {
+                .search-input-div {
+                    position: relative;
+                    height: 50px;
+                    width: 150px;
+                }
+    
+                img {
+                    position: absolute;
+                    top: 15px;
+                    right: 15px;
+                }
+            }
+            
+
+        }
+
+
+    }
 }

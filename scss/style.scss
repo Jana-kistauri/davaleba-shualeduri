@@ -3,17 +3,13 @@
 $color-01: #222222;
 $color-02: #FFFFFF;
 $color-03: #FF2288;
+$color-04: #111111;
 
 $number-01: 1rem;
 $number-02: 2rem;
 $number-03: 3rem;
 
-// dafaruli
-%active {
-    background-color: $color-03;
-    border-radius: 10px;
-}
-
+//  mixins
 @mixin flex($horizontal, $vertical) {
     display: flex;
     justify-content: $horizontal;
@@ -32,6 +28,26 @@ $number-03: 3rem;
     line-height: $line-height;
     letter-spacing: $letter-spacing;
 }
+// dafaruli
+%bg-active {
+    background-color: $color-03;
+    border-radius: 10px;
+}
+
+%font-01 {
+    @include font(14px, "avenir heavy", 500, 19px, 0);
+}
+
+%ball {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    background-color: $color-03;
+    border-radius: 50%;
+}
+
 
 .page-container {
     @include flex(space-between, start);
@@ -82,7 +98,7 @@ $number-03: 3rem;
                 margin: 2.3rem 0;
                 width: 100%;
                 &:first-child {
-                    @extend %active;
+                    @extend %bg-active;
                 }
                 
             }
@@ -105,7 +121,7 @@ $number-03: 3rem;
         }
         h3 {
             cursor: pointer;
-            @include font(14px, Avenir, 400, 19px, 0)
+            @extend %font-01;
         }
         
     }
@@ -119,27 +135,73 @@ $number-03: 3rem;
             * {
                 @include inline(middle);            
             }
-            // search div area
 
-            // 
-            // search input icons vasworebdiiii
-            // 
-            // 
-            // 
+            border-bottom: 1px solid rgba($color: #000000, $alpha: 0.05);
+            padding-bottom: $number-01;
+            margin: $number-02 $number-03 $number-02 $number-02;
+
             .search-div {
-                .search-input-div {
-                    position: relative;
-                    height: 50px;
-                    width: 150px;
+                @include flex(space-between, center);
+                width: 446px;
+                height: 56px;
+                @media (max-width: 1500px) {
+                    width: 300px;
+                    height: $number-03;
                 }
-    
+                padding: 0 $number-02;
+                border-radius: 0.8rem;
+                background-color: #F8F8F8;
+
+                input {
+                    border: 0;
+                    background-color: #F8F8F8;
+                    outline: none;
+                    &::placeholder {
+                        @extend %font-01;
+                        opacity: 0.5;                            
+                    }
+                }
+
                 img {
-                    position: absolute;
-                    top: 15px;
-                    right: 15px;
+                    cursor: pointer;
                 }
+
             }
             
+            .header-right {
+                a {
+                    margin-right: $number-01;
+                    &:first-child {
+                        @extend %font-01;
+                        color: $color-03;
+                    }
+
+                    &:nth-child(2), &:nth-child(3){
+                        position: relative;
+
+                        .ball-div {
+                            @extend %ball;
+                        }
+                       
+                    }
+
+                }
+                
+                .btn-upload {
+                    border: 0;
+                    width: 129px;
+                    height: 56px;
+                    @media (max-width: 1500px) {
+                        width: 100px;
+                        height: $number-03;
+                    }
+                    @extend %bg-active;
+                    @extend %font-01;
+                    color: $color-02;
+                    text-transform: uppercase;
+                    cursor: pointer;
+                }
+            }
 
         }
 

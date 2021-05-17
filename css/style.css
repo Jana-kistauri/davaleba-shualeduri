@@ -1,2 +1,125 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+* {
+  box-sizing: border-box; }
+
+a {
+  text-decoration: none; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
 body {
-  background-color: rosybrown; }
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: '';
+  content: none; }
+
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.page-container .page-aside .aside-middle .navbar-ul li:first-child {
+  background-color: #FF2288;
+  border-radius: 10px; }
+
+.page-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: start; }
+  .page-container .page-aside {
+    width: 20vw;
+    padding: 3rem 3rem 5rem 3rem;
+    background-color: #222222; }
+    @media (max-width: 1500px) {
+      .page-container .page-aside {
+        padding: 1rem 1rem 5rem 1rem; } }
+    .page-container .page-aside a, .page-container .page-aside h2, .page-container .page-aside h3 {
+      color: #FFFFFF; }
+    .page-container .page-aside a, .page-container .page-aside img {
+      display: inline-block;
+      vertical-align: middle; }
+    .page-container .page-aside img {
+      margin-right: 15px; }
+    .page-container .page-aside .aside-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 3rem; }
+      .page-container .page-aside .aside-top .logo span {
+        font-size: 24px;
+        font-family: Avenir;
+        font-weight: bold;
+        line-height: 32px;
+        letter-spacing: 0; }
+      .page-container .page-aside .aside-top .logo {
+        font-size: 24px;
+        font-family: Avenir;
+        font-weight: 400;
+        line-height: 32px;
+        letter-spacing: 0; }
+      .page-container .page-aside .aside-top .burger-icon {
+        cursor: pointer; }
+    .page-container .page-aside .aside-middle {
+      margin-bottom: 50px; }
+      .page-container .page-aside .aside-middle .navbar-ul li {
+        padding: 1rem 2rem 1rem 0.7rem;
+        margin: 2.3rem 0;
+        width: 100%; }
+    .page-container .page-aside .aside-bottom {
+      padding: 1rem 2rem 1rem 0.7rem; }
+      .page-container .page-aside .aside-bottom h2:first-child {
+        font-size: 12px;
+        font-family: "Avenir heavy";
+        font-weight: 400;
+        line-height: 16px;
+        letter-spacing: 0;
+        margin-bottom: 25px; }
+      .page-container .page-aside .aside-bottom li {
+        margin: 20px 0; }
+    .page-container .page-aside h3 {
+      cursor: pointer;
+      font-size: 14px;
+      font-family: Avenir;
+      font-weight: 400;
+      line-height: 19px;
+      letter-spacing: 0; }
+  .page-container .page-main-area {
+    width: 80vw; }
+    .page-container .page-main-area .page-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
+      .page-container .page-main-area .page-header * {
+        display: inline-block;
+        vertical-align: middle; }
+      .page-container .page-main-area .page-header .search-div .search-input-div {
+        position: relative;
+        height: 50px;
+        width: 150px; }
+      .page-container .page-main-area .page-header .search-div img {
+        position: absolute;
+        top: 15px;
+        right: 15px; }

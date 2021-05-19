@@ -1,0 +1,135 @@
+@import './tools/reset.scss';
+@import './tools/variables.scss';
+@import './tools/media-queries.scss';
+@import './tools/fonts.scss';
+@import './tools/mixins.scss';
+@import './tools/privates.scss';
+
+
+.page-footer {
+    width: 100%;
+    @include container($number-03);
+    margin: 100px 0 40px 0;
+
+    @include respond(small) {
+        padding: 0;
+        margin-bottom: 15px;
+    }
+
+    .footer-main {
+        @include flex(flex-start, flex-start);
+        flex-wrap: wrap;
+
+        @include respond(medium) {
+            @include flex(space-evenly, flex-start);
+
+        }
+
+        @include respond(small) {
+            @include flex(center, flex-start);
+        }
+        .footer-links {
+            margin-right: 150px;
+            @media screen and (max-width: 1590px) {
+                margin-right: 100px;
+            }
+
+            @include respond(medium) {
+                margin-right: 0;
+            }
+
+            @include respond(small) {
+                margin: 0 60px 30px 0;
+            }
+
+            h3 {
+                margin-bottom: 50px;
+                @include font(16px, 'Avenir LT Pro', 21px);
+                @include respond(medium) {
+                    margin-bottom: 30px;
+                }
+            }
+
+            a {
+                display: block;
+                width: 100%;
+                @include font(16px, 'Avenir LT Pro', 21px);
+                margin: 25px 0;
+
+                &:hover {
+                    color: $color-03;
+                }
+
+                @include respond(medium) {
+                    margin: 15px 0;
+                }
+            }
+            h3, a {
+                @include respond(large){
+                    font-size: 12px;
+                }
+
+                @include respond(medium){
+                    font-size: 10px;
+                }
+            }
+            .inside-title {
+                margin: 50px 0;
+                @include respond(medium) {
+                    margin: 30px 0;
+                }
+            }
+        }
+    }
+
+    .footer-bottom {
+        margin-top: 100px;
+        @include flex(space-between, center);
+        @include respond(small) {
+            flex-direction: column;
+        }
+        .footer-social-icons {
+            @include respond(small) {
+                @include flex(center, center);
+                width: 100%;
+            }
+            
+           a {
+                margin-right: 30px;
+                img {
+                    opacity: 0.7;
+
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+
+                @include respond(large) {
+                    margin-right: 20px;
+                }
+
+                &:last-child {
+                    @include respond(small) {
+                        margin-right: 0;
+                    }
+                } 
+            }
+        }
+
+        a {
+            @include font(16px, 'Avenir LT Pro', 40px);
+
+            span {
+                font-family: 'Avenir LT Pro 65';
+                font-weight: 900;
+                
+                &:hover {
+                    color: $color-03;
+                }
+            }
+            @include respond(large) {
+                font-size: 14px;
+            }
+        }
+    }
+}

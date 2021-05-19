@@ -1,0 +1,44 @@
+@import './tools/reset.scss';
+@import './tools/variables.scss';
+@import './tools/media-queries.scss';
+@import './tools/fonts.scss';
+@import './tools/mixins.scss';
+@import './tools/privates.scss';
+
+
+.page-container {
+    max-width: 1940px;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    @include flex(center, start);
+    // page aside styles
+    
+
+    .page-main-area {
+        width: 80vw;
+        
+
+        @include respond(large) {
+            width: 83vw;
+        }
+
+        @include respond(medium) {
+            width: 98vw;
+        }
+        @include respond(small) {
+            width: 100vw;
+            padding: 0;
+            margin: 0;
+        }
+        
+
+        .page-main-sec {
+            @include container($number-03);
+            width: 100%;
+        }
+
+        
+    }
+        
+}

@@ -1,0 +1,182 @@
+@import './tools/reset.scss';
+@import './tools/variables.scss';
+@import './tools/media-queries.scss';
+@import './tools/fonts.scss';
+@import './tools/mixins.scss';
+@import './tools/privates.scss';
+
+.page-header {
+    @include container($number-03);
+    @include flex(space-between, center);
+    
+    
+    * {
+        @include inline(middle);            
+    }
+
+    border-bottom: 1px solid rgba($color: #000000, $alpha: 0.05);
+    padding-bottom: $number-01;
+    margin: $number-02 $number-03 $number-02 0;
+
+    @include respond(large) {
+       margin: $number-01 $number-02 $number-01 0;
+    }
+    @include respond(small) { 
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding: 8px 0;
+        margin-top: 0;
+        margin-bottom: 50px;
+        background-color: #fff;
+        z-index: 100;
+    }
+    .responsive-bars {
+        display: none;
+        cursor: pointer;
+        .burger-icon {
+            filter: invert(11%) sepia(67%) saturate(0%) hue-rotate(104deg) brightness(89%) contrast(95%);
+            opacity: 1;
+            margin-right: 30px;
+            margin-left: 15px;
+        }
+
+        .search-icon-resp {
+            @include respond(small) {
+                display: none;
+            }
+        }
+
+        @include respond(medium) {
+            display: flex;
+        }
+        
+    }
+
+    .search-div {
+        @include flex(space-between, center);
+        width: 446px;
+        height: 56px;
+
+        @include respond(large) {
+            width: 300px;
+            height: $number-03;
+        }
+        
+        @include respond(medium) {
+            display: none;
+        }
+
+        padding: 0 $number-02;
+        border-radius: 0.8rem;
+        background-color: #F8F8F8;
+
+        input {
+            @extend %font-01;
+            opacity: 0.5;
+            border: 0;
+            background-color: #F8F8F8;
+            outline: none;
+            &::placeholder {
+                @extend %font-01;
+                opacity: 0.5;                            
+            }
+
+            @include respond(medium) {
+                display: none;
+            }
+        }
+
+        img {
+            cursor: pointer;
+            opacity: 0.7;
+            &:hover {
+                opacity: 1;
+            }
+        }
+
+    }
+    
+    .header-right {
+        
+        a {
+            margin-right: $number-01;
+            &:first-child {
+                @extend %font-01;
+                color: $color-03;
+                &:hover {
+                    letter-spacing: 2px;
+                }
+                @include respond(large) {
+                    font-size: 12px;
+                }
+
+                @include respond(small) {
+                    display: none;
+                } 
+            }
+
+            &:nth-child(2), &:nth-child(3){
+                position: relative;
+                
+                &:hover {
+                    filter: invert(45%) sepia(97%) saturate(6238%) hue-rotate(318deg) brightness(102%) contrast(101%);
+                    .ball-div {
+                        width: 12px;
+                        height: 12px;
+                        top: -2px;
+                        right: -2px;
+                        
+                    }
+                }
+                
+                .ball-div {
+                    @extend %ball;
+                }
+               
+            }
+            
+            img {
+                &:last-child {
+                    margin: 0 5px;
+                    opacity: 0.7;
+                    &:hover {
+                        opacity: 1;
+                    }
+                    transition: 0.3s ease all;
+                }
+            }
+            
+        }
+        
+        .btn-upload {
+            border: 0;
+            width: 129px;
+            height: 56px;
+            
+           
+
+            @include bg-active($color-03);
+            @extend %font-01;
+            color: $color-02;
+            text-transform: uppercase;
+            transition: 0.3s all ease-in-out;
+            cursor: pointer;
+            &:hover {
+                color: $color-01;
+                background-color: #FFF;
+                border: 2px solid $color-03;
+                letter-spacing: 2px;
+            }
+            @include respond(large) {
+                width: 100px;
+                height: $number-03;
+                font-size: 12px;
+            }
+            @include respond(medium) {
+                display: none;
+            }
+        }
+    }
+
+}

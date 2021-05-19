@@ -1,0 +1,121 @@
+@import './tools/reset.scss';
+@import './tools/variables.scss';
+@import './tools/media-queries.scss';
+@import './tools/fonts.scss';
+@import './tools/mixins.scss';
+@import './tools/privates.scss';
+
+
+.page-aside {
+    width: 20vw;
+    padding: 3rem 3rem 5rem 3rem;
+
+    @include respond(large) {
+        width: 17vw;
+        padding: 1rem 1rem 5rem 1rem;
+    }
+    @include respond(medium) {
+        display: none;
+    }
+    
+    background-color: $color-01;
+
+    a, h2, h3 {
+        color: $color-02;
+    }
+
+    a, img {
+        @include inline(middle)
+    }
+
+    img {
+        margin-right: 15px;
+    }
+
+    // aside top area
+    .aside-top {
+        @include flex(space-between, center);
+        margin-bottom: 3rem;
+        
+        .logo span {
+            @include font(24px, 'Avenir LT Pro 65', 32px);
+            @include respond(large) {
+                font-size: 20px;
+            }
+            font-weight: bold;
+            color: $color-02;
+        }
+
+        .logo {
+            font-family: 'Avenir LT Pro';
+            @include respond(large) {
+                font-size: 20px;
+                margin-right: 10px;
+            }
+        }
+
+        .burger-icon {
+            cursor: pointer;
+        }
+    }
+    // aside middle area
+    .aside-middle {
+        .active {
+            @include bg-active($color-03);
+            
+        }
+        
+        .navbar-ul li  {
+            padding: 1rem 2rem 1rem 0.7rem;
+            margin: 2.3rem 0;
+            width: 100%;
+            transition: 0.3s ease-in all;
+            @include respond(large) {
+                font-size: 12px;
+                padding: 0.7rem 2rem 0.7rem 0.7rem;
+            }
+            &:hover {
+                @include bg-active($color-03);
+                letter-spacing: 2px;
+            }
+            
+        }
+        margin-bottom: 50px;
+    }
+    // aside bottom area
+    .aside-bottom {
+        padding: 1rem 2rem 1rem 0.7rem;
+        @include respond(large) {
+            font-size: 12px;
+            padding: 1rem 0;
+        }
+        h2 {
+            &:first-child {
+                @include font(12px, 'Avenir LT Pro 55 Roman', 16px);
+                margin-bottom: 25px;
+            }
+        }
+        
+        li {
+            margin: 20px 0;
+            &:hover {
+                letter-spacing: 1px;
+                a {
+                    color: $color-03;
+                }
+            }
+        }
+
+    }
+    h3 {
+        cursor: pointer;
+        @extend %font-01;
+        @include respond(large) {
+            font-size: 12px;
+        }
+        &:hover {
+            letter-spacing: 1px;
+        }
+    }
+    
+}

@@ -9,7 +9,6 @@
 .page-aside {
     width: 20vw;
     padding: 3rem 3rem 5rem 3rem;
-
     @include respond(large) {
         width: 17vw;
         padding: 1rem 1rem 5rem 1rem;

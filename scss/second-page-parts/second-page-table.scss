@@ -1,0 +1,124 @@
+
+@import './tools/variables.scss';
+@import './tools/media-queries.scss';
+@import './tools/fonts.scss';
+@import './tools/mixins.scss';
+@import './tools/privates.scss';
+
+
+.avatar-div {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 2px solid $color-08;
+    @include flex(center, center);
+
+
+    &:hover {
+        img {
+            filter: invert(45%) sepia(97%) saturate(6238%) hue-rotate(318deg) brightness(102%) contrast(101%); 
+        }
+        border-color: $color-03;
+    }
+    transition: 0.3s ease-in-out all;
+}
+
+.table-div {
+    padding: 0 5rem;
+    margin-top: 50px;
+
+    @include respond(small) {
+        padding: 0 0.5rem;
+        @include flex(center, center);
+        flex-wrap: wrap;
+    }
+    .second-page-table {
+        
+        tbody {
+            text-align: left;
+            
+            @include respond(small) {
+                @include flex(space-bewteen, flex-start);
+                flex-wrap: wrap;
+            }
+
+            .table-titles {
+                
+                padding: 50px 0;
+                width: 75vw;
+                @include respond(small) {
+                    width: 45vw;
+                    padding: 0 0.5rem;
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                    margin-bottom: 40px;
+                }
+                th {
+                    @include font(18px, 'Avenir LT Pro 55 Roman', 24px);
+                    color: $color-04;
+                    width: calc(100% / 8);
+                    padding: 25px 0;
+
+                    @include respond(large) {
+                        font-size: 14px;
+                    }
+
+                    @include respond(small) {
+                        width: 45vw;
+                        display: inline-block;
+                        font-size: 14px;
+                    }
+                }
+                
+            }
+            
+            .table-data {
+                width: 75vw;
+                padding: 50px 0;
+                border-top: 1px solid $color-08;
+                cursor: pointer;
+                @include respond(small) {
+                    width: 45vw;
+                    padding: 0 0.5rem;
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                    padding: 0;
+                    margin-bottom: 40px;
+                }
+                td {
+                    width: calc(100% / 8);
+                    padding: 25px 0;
+                    @include font(16px, 'Avenir LT Pro 55 Roman', 21px);
+                    color: $color-07;  
+                    
+                    @include respond(large) {
+                        font-size: 14px;
+                    }
+                    @include respond(small) {
+                        width: 45vw;
+                        display: inline-block;
+                        font-size: 12px;
+                        line-height: 24px;
+                    }
+                }
+                &:hover {
+                    background-color: $color-05;
+                }
+            }
+            .table-titles-resp {
+                display: none;
+                @include respond(small) {
+                    display: inline-block;
+                }
+            }
+            .table-active {
+                td {
+                    color: $color-03;
+                }
+            }
+            
+        }   
+    }
+}

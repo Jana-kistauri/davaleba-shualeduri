@@ -1,0 +1,84 @@
+@import './tools/reset.scss';
+@import './tools/variables.scss';
+@import './tools/media-queries.scss';
+@import './tools/fonts.scss';
+@import './tools/mixins.scss';
+@import './tools/privates.scss';
+
+
+
+.main-boxes {
+    @include flex(center, center);
+    flex-wrap: wrap;
+    .box {
+        margin-top: 30px;
+        position: relative;
+        @include flex(center, center);
+        flex-direction: column;
+        width: calc(100% / 4);
+        padding: 15px;
+
+
+        @include respond(large) {
+            padding: 0;
+        }
+
+        @include respond(medium) {
+            width: calc(100% / 2);
+        }
+        
+        @include respond(small) {
+            width: 100%;
+        }
+
+        &:first-child {
+            @extend %box-icon;
+        }
+        .icon-div {
+            display: none;
+        }
+        &:hover {
+            @extend %box-icon;
+            
+        }
+
+        
+        p {
+            @include font(18px, 'Avenir LT Pro', 24px);
+           
+            height: 60px;
+            width: 90%;
+            text-align: start;
+
+            &:hover {
+                color: $color-03;
+            }
+            @include respond(large) {
+                text-align: center;
+                font-size: 12px;
+
+                line-height: 16px;
+                height: 50px;
+            }
+            
+        }
+
+            
+        img {
+            &:first-child {
+                width: 100%;
+                @include respond(small) {
+                    width: inherit;
+                }
+            }
+        }
+                
+            
+        
+        
+        &:hover {
+            background-color: $color-05;
+        }
+        transition: 0.2s ease-in-out all;
+    }
+}

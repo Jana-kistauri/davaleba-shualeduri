@@ -1,0 +1,42 @@
+@import './tools/reset.scss';
+@import './tools/variables.scss';
+@import './tools/media-queries.scss';
+@import './tools/fonts.scss';
+@import './tools/mixins.scss';
+@import './tools/privates.scss';
+
+
+
+.btn-div {
+    width: 100%;
+    @include flex(center, center);
+    margin: 70px 0;
+
+    @include respond(small) {
+        margin: 55px 0;
+    }
+
+    .btn-load_more {
+        width: 289px;
+        height: 56px;
+        padding: $number-01 24px;
+        @include font(16px, 'Avenir LT Pro 55 Roman', 21px);
+        @include bg-active($color-05);
+        color: $color-01;
+        border: $color-05;
+        outline: none;
+        cursor: pointer;
+        transition: 0.3s all ease-in-out;
+        &:hover {
+            background-color: $color-02;
+            border: 2px solid $color-05;
+            letter-spacing: 2px;
+        }
+        @include respond(large) {
+            width: 200px;
+            height: 40px;
+            padding: 0rem 24px;
+            font-size: 12px;
+        }
+    }
+}

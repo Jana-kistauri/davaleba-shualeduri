@@ -1,0 +1,141 @@
+@import './tools/reset.scss';
+@import './tools/variables.scss';
+@import './tools/media-queries.scss';
+@import './tools/fonts.scss';
+@import './tools/mixins.scss';
+@import './tools/privates.scss';
+
+
+.designers-section {
+    width: 100%;
+    @include container($number-03);
+    background-color: $color-06;
+    .designers-title {
+        @include flex(space-between, center);
+        padding: 50px 0 80px 0;
+
+        @include respond(large) {
+            padding: 30px 0 50px 0;
+        }
+
+        h2 {
+            @include font(32px, 'Avenir LT Pro 55 Roman', 43px);
+            @include respond(large) {
+                font-size: 24px;
+            }
+
+            @include respond(small) {
+                font-size: 16px;
+                margin-right: $number-01;
+            }
+        }
+        a  {
+            @extend %font-01;
+            opacity: 0.3;
+        }
+
+        
+    }
+
+    .designers-list {
+
+            width: 100%;
+            @include flex(center, center);
+            flex-wrap: wrap;
+        div {
+
+            @include flex(center, center);
+            flex-direction: column;
+            img, h3, p, button {
+                cursor: pointer;
+                
+            }
+            width: calc(100% / 8);
+            text-align: center;
+
+
+            @include respond(medium) {
+                width: calc(100% / 4);
+            }
+
+            @include respond(small) {
+                width: calc(100% / 2);
+            }
+            
+            @media screen and (max-width: 480px) {
+                width: 100%;
+            }
+
+            &:hover {
+                h3 {
+                    color: $color-03;
+                }
+            }
+            img {
+                margin-bottom: 20px;
+                width: 90%;
+                opacity: 0.8;
+
+                &:hover {
+                    opacity: 1;
+                }
+                @include respond(small) {
+                    width: 150px;
+                    height: 150px;
+                }
+            }
+
+            h3 {
+                @include font(16px, 'Avenir LT Pro', 21px);
+                @include respond(large) {
+                    font-size: 14px;
+                }
+            }
+
+            p {
+                max-height: 70px;
+                height: 50px;
+                margin-top: $number-01;
+                @include font(12px, 'Avenir LT Pro', 16px);
+                letter-spacing: 0.3px;
+                opacity: 0.6;
+                &:hover {
+                    opacity: 0.9;
+                }
+
+                @include respond(small) {
+                    height: 30px;
+                    margin-top: 5px;
+                }
+            }
+
+            
+            &:nth-child(5) p {
+                margin-top: 2.3rem;
+            }
+
+            button {
+                max-width: 132px;
+                width: 90%;
+                height: 44px;
+                margin: 20px 0 70px 0;
+                @include bg-active($color-06);
+                border: 1px solid $color-05;
+
+                &:hover {
+                    @include bg-active($color-05);
+                }
+                @include respond(large) {
+                    margin: 0 0 60px 0;
+                }
+                transition: 0.3s ease-in-out all;
+            }
+
+            &:first-child button, 
+            &:nth-child(5) button {
+                @include bg-active($color-05);
+            }
+        }
+
+    }
+}

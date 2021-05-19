@@ -192,55 +192,10 @@ table {
 
 .main-filter .filter-left p:hover, .main-filter .btn-filter:hover {
   background-color: #F2F2F2;
+  border-radius: 10px;
   letter-spacing: 2px;
   font-weight: 700;
   border-color: #F2F2F2; }
-
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline; }
-
-* {
-  box-sizing: border-box;
-  color: #222222;
-  font-family: sans-serif; }
-
-a {
-  text-decoration: none;
-  color: #222222; }
-
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-  display: block; }
-
-body {
-  line-height: 1; }
-
-ol, ul {
-  list-style: none; }
-
-blockquote, q {
-  quotes: none; }
-
-blockquote:before, blockquote:after {
-  content: '';
-  content: none; }
-
-q:before, q:after {
-  content: '';
-  content: none; }
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0; }
 
 @font-face {
   font-family: 'Avenir LT Pro 65';
@@ -390,6 +345,7 @@ table {
 
 .main-filter .filter-left p:hover, .main-filter .btn-filter:hover {
   background-color: #F2F2F2;
+  border-radius: 10px;
   letter-spacing: 2px;
   font-weight: 700;
   border-color: #F2F2F2; }
@@ -417,21 +373,22 @@ table {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 3rem; }
-    .page-aside .aside-top .logo span {
-      font-size: 24px;
-      font-family: "Avenir LT Pro 65";
-      line-height: 32px;
-      font-weight: bold;
-      color: #FFFFFF; }
-      @media (max-width: 1370px) {
-        .page-aside .aside-top .logo span {
-          font-size: 20px; } }
     .page-aside .aside-top .logo {
-      font-family: 'Avenir LT Pro'; }
+      font-size: 24px;
+      font-family: "Avenir LT Pro";
+      line-height: 32px; }
       @media (max-width: 1370px) {
         .page-aside .aside-top .logo {
-          font-size: 20px;
           margin-right: 10px; } }
+      .page-aside .aside-top .logo span {
+        font-size: 24px;
+        font-family: "Avenir LT Pro 65";
+        line-height: 32px;
+        font-weight: bold;
+        color: #FFFFFF; }
+        @media (max-width: 1370px) {
+          .page-aside .aside-top .logo span {
+            font-size: 20px; } }
     .page-aside .aside-top .burger-icon {
       cursor: pointer; }
   .page-aside .aside-middle {
@@ -464,64 +421,20 @@ table {
       line-height: 16px;
       margin-bottom: 25px; }
     .page-aside .aside-bottom li {
-      margin: 20px 0; }
+      margin: 20px 0;
+      transition: 0.3s ease-in all; }
       .page-aside .aside-bottom li:hover {
         letter-spacing: 1px; }
         .page-aside .aside-bottom li:hover a {
           color: #FF2288; }
   .page-aside h3 {
-    cursor: pointer; }
+    cursor: pointer;
+    transition: 0.3s ease-in all; }
     @media (max-width: 1370px) {
       .page-aside h3 {
         font-size: 12px; } }
     .page-aside h3:hover {
       letter-spacing: 1px; }
-
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline; }
-
-* {
-  box-sizing: border-box;
-  color: #222222;
-  font-family: sans-serif; }
-
-a {
-  text-decoration: none;
-  color: #222222; }
-
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-  display: block; }
-
-body {
-  line-height: 1; }
-
-ol, ul {
-  list-style: none; }
-
-blockquote, q {
-  quotes: none; }
-
-blockquote:before, blockquote:after {
-  content: '';
-  content: none; }
-
-q:before, q:after {
-  content: '';
-  content: none; }
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0; }
 
 @font-face {
   font-family: 'Avenir LT Pro 65';
@@ -671,6 +584,7 @@ table {
 
 .main-filter .filter-left p:hover, .main-filter .btn-filter:hover {
   background-color: #F2F2F2;
+  border-radius: 10px;
   letter-spacing: 2px;
   font-weight: 700;
   border-color: #F2F2F2; }
@@ -990,6 +904,7 @@ table {
 
 .main-filter .filter-left p:hover, .main-filter .btn-filter:hover {
   background-color: #F2F2F2;
+  border-radius: 10px;
   letter-spacing: 2px;
   font-weight: 700;
   border-color: #F2F2F2; }
@@ -1246,6 +1161,7 @@ table {
 
 .main-filter .filter-left p:hover, .main-filter .btn-filter:hover {
   background-color: #F2F2F2;
+  border-radius: 10px;
   letter-spacing: 2px;
   font-weight: 700;
   border-color: #F2F2F2; }
@@ -1282,7 +1198,7 @@ table {
       line-height: 24px;
       height: 60px;
       width: 90%;
-      text-align: start; }
+      text-align: center; }
       .main-boxes .box p:hover {
         color: #FF2288; }
       @media (max-width: 1370px) {
@@ -1493,6 +1409,7 @@ table {
 
 .main-filter .filter-left p:hover, .main-filter .btn-filter:hover {
   background-color: #F2F2F2;
+  border-radius: 10px;
   letter-spacing: 2px;
   font-weight: 700;
   border-color: #F2F2F2; }
@@ -1725,6 +1642,7 @@ table {
 
 .main-filter .filter-left p:hover, .main-filter .btn-filter:hover {
   background-color: #F2F2F2;
+  border-radius: 10px;
   letter-spacing: 2px;
   font-weight: 700;
   border-color: #F2F2F2; }
@@ -1835,52 +1753,6 @@ table {
         background-color: #F2F2F2;
         border-radius: 10px; }
 
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline; }
-
-* {
-  box-sizing: border-box;
-  color: #222222;
-  font-family: sans-serif; }
-
-a {
-  text-decoration: none;
-  color: #222222; }
-
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-  display: block; }
-
-body {
-  line-height: 1; }
-
-ol, ul {
-  list-style: none; }
-
-blockquote, q {
-  quotes: none; }
-
-blockquote:before, blockquote:after {
-  content: '';
-  content: none; }
-
-q:before, q:after {
-  content: '';
-  content: none; }
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0; }
-
 @font-face {
   font-family: 'Avenir LT Pro 65';
   src: url("../fonts/AvenirLTPro-Black.eot");
@@ -2029,6 +1901,7 @@ table {
 
 .main-filter .filter-left p:hover, .main-filter .btn-filter:hover {
   background-color: #F2F2F2;
+  border-radius: 10px;
   letter-spacing: 2px;
   font-weight: 700;
   border-color: #F2F2F2; }
@@ -2138,51 +2011,184 @@ table {
         .page-footer .footer-bottom a {
           font-size: 14px; } }
 
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline; }
+@font-face {
+  font-family: 'Avenir LT Pro 65';
+  src: url("../fonts/AvenirLTPro-Black.eot");
+  src: url("../fonts/AvenirLTPro-Black.eot?#iefix") format("embedded-opentype"), url("../fonts/AvenirLTPro-Black.woff2") format("woff2"), url("../fonts/AvenirLTPro-Black.woff") format("woff"), url("../fonts/AvenirLTPro-Black.ttf") format("truetype"), url("../fonts/AvenirLTPro-Black.svg#AvenirLTPro-Black") format("svg");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap; }
 
-* {
-  box-sizing: border-box;
-  color: #222222;
-  font-family: sans-serif; }
+@font-face {
+  font-family: 'Avenir LT Pro 65 Italic';
+  src: url("../fonts/AvenirLTPro-BlackOblique.eot");
+  src: url("../fonts/AvenirLTPro-BlackOblique.eot?#iefix") format("embedded-opentype"), url("../fonts/AvenirLTPro-BlackOblique.woff2") format("woff2"), url("../fonts/AvenirLTPro-BlackOblique.woff") format("woff"), url("../fonts/AvenirLTPro-BlackOblique.ttf") format("truetype"), url("../fonts/AvenirLTPro-BlackOblique.svg#AvenirLTPro-BlackOblique") format("svg");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap; }
 
-a {
-  text-decoration: none;
-  color: #222222; }
+@font-face {
+  font-family: 'Avenir LT Pro';
+  src: url("../fonts/AvenirLTPro-Book.eot");
+  src: url("../fonts/AvenirLTPro-Book.eot?#iefix") format("embedded-opentype"), url("../fonts/AvenirLTPro-Book.woff2") format("woff2"), url("../fonts/AvenirLTPro-Book.woff") format("woff"), url("../fonts/AvenirLTPro-Book.ttf") format("truetype"), url("../fonts/AvenirLTPro-Book.svg#AvenirLTPro-Book") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; }
 
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-  display: block; }
+@font-face {
+  font-family: 'Avenir LT Pro 45 Book';
+  src: url("../fonts/AvenirLTPro-BookOblique.eot");
+  src: url("../fonts/AvenirLTPro-BookOblique.eot?#iefix") format("embedded-opentype"), url("../fonts/AvenirLTPro-BookOblique.woff2") format("woff2"), url("../fonts/AvenirLTPro-BookOblique.woff") format("woff"), url("../fonts/AvenirLTPro-BookOblique.ttf") format("truetype"), url("../fonts/AvenirLTPro-BookOblique.svg#AvenirLTPro-BookOblique") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; }
 
-body {
-  line-height: 1; }
+@font-face {
+  font-family: 'Avenir LT Pro 55 Roman';
+  src: url("../fonts/AvenirLTPro-Heavy.eot");
+  src: url("../fonts/AvenirLTPro-Heavy.eot?#iefix") format("embedded-opentype"), url("../fonts/AvenirLTPro-Heavy.woff2") format("woff2"), url("../fonts/AvenirLTPro-Heavy.woff") format("woff"), url("../fonts/AvenirLTPro-Heavy.ttf") format("truetype"), url("../fonts/AvenirLTPro-Heavy.svg#AvenirLTPro-Heavy") format("svg");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap; }
 
-ol, ul {
-  list-style: none; }
+@font-face {
+  font-family: 'Avenir LT Pro 55 Roman Italic';
+  src: url("../fonts/AvenirLTPro-HeavyOblique.eot");
+  src: url("../fonts/AvenirLTPro-HeavyOblique.eot?#iefix") format("embedded-opentype"), url("../fonts/AvenirLTPro-HeavyOblique.woff2") format("woff2"), url("../fonts/AvenirLTPro-HeavyOblique.woff") format("woff"), url("../fonts/AvenirLTPro-HeavyOblique.ttf") format("truetype"), url("../fonts/AvenirLTPro-HeavyOblique.svg#AvenirLTPro-HeavyOblique") format("svg");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap; }
 
-blockquote, q {
-  quotes: none; }
+@font-face {
+  font-family: 'Avenir LT Pro';
+  src: url("../fonts/AvenirLTPro-Light.eot");
+  src: url("../fonts/AvenirLTPro-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/AvenirLTPro-Light.woff2") format("woff2"), url("../fonts/AvenirLTPro-Light.woff") format("woff"), url("../fonts/AvenirLTPro-Light.ttf") format("truetype"), url("../fonts/AvenirLTPro-Light.svg#AvenirLTPro-Light") format("svg");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap; }
 
-blockquote:before, blockquote:after {
-  content: '';
-  content: none; }
+@font-face {
+  font-family: 'Avenir LT Pro 35';
+  src: url("../fonts/AvenirLTPro-LightOblique.eot");
+  src: url("../fonts/AvenirLTPro-LightOblique.eot?#iefix") format("embedded-opentype"), url("../fonts/AvenirLTPro-LightOblique.woff2") format("woff2"), url("../fonts/AvenirLTPro-LightOblique.woff") format("woff"), url("../fonts/AvenirLTPro-LightOblique.ttf") format("truetype"), url("../fonts/AvenirLTPro-LightOblique.svg#AvenirLTPro-LightOblique") format("svg");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap; }
 
-q:before, q:after {
-  content: '';
-  content: none; }
+@font-face {
+  font-family: 'Avenir LT Pro';
+  src: url("../fonts/AvenirLTPro-Medium.eot");
+  src: url("../fonts/AvenirLTPro-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/AvenirLTPro-Medium.woff2") format("woff2"), url("../fonts/AvenirLTPro-Medium.woff") format("woff"), url("../fonts/AvenirLTPro-Medium.ttf") format("truetype"), url("../fonts/AvenirLTPro-Medium.svg#AvenirLTPro-Medium") format("svg");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap; }
 
-table {
-  border-collapse: collapse;
-  border-spacing: 0; }
+@font-face {
+  font-family: 'Avenir LT Pro 65';
+  src: url("../fonts/AvenirLTPro-MediumOblique.eot");
+  src: url("../fonts/AvenirLTPro-MediumOblique.eot?#iefix") format("embedded-opentype"), url("../fonts/AvenirLTPro-MediumOblique.woff2") format("woff2"), url("../fonts/AvenirLTPro-MediumOblique.woff") format("woff"), url("../fonts/AvenirLTPro-MediumOblique.ttf") format("truetype"), url("../fonts/AvenirLTPro-MediumOblique.svg#AvenirLTPro-MediumOblique") format("svg");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: 'Avenir LT Pro 55 Roman';
+  src: url("../fonts/AvenirLTPro-Oblique.eot");
+  src: url("../fonts/AvenirLTPro-Oblique.eot?#iefix") format("embedded-opentype"), url("../fonts/AvenirLTPro-Oblique.woff2") format("woff2"), url("../fonts/AvenirLTPro-Oblique.woff") format("woff"), url("../fonts/AvenirLTPro-Oblique.ttf") format("truetype"), url("../fonts/AvenirLTPro-Oblique.svg#AvenirLTPro-Oblique") format("svg");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap; }
+
+@font-face {
+  font-family: 'Avenir LT Pro';
+  src: url("../fonts/AvenirLTPro-Roman.eot");
+  src: url("../fonts/AvenirLTPro-Roman.eot?#iefix") format("embedded-opentype"), url("../fonts/AvenirLTPro-Roman.woff2") format("woff2"), url("../fonts/AvenirLTPro-Roman.woff") format("woff"), url("../fonts/AvenirLTPro-Roman.ttf") format("truetype"), url("../fonts/AvenirLTPro-Roman.svg#AvenirLTPro-Roman") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; }
+
+.page-aside h3, .page-header .search-div input, .page-header .search-div input::placeholder, .page-header .header-right a:first-child, .page-header .header-right .btn-upload, .designers-section .designers-title a {
+  font-size: 14px;
+  font-family: "Avenir LT Pro 55 Roman";
+  line-height: 19px; }
+
+.page-header .header-right a:nth-child(2) .ball-div, .page-header .header-right a:nth-child(3) .ball-div {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  background-color: #FF2288;
+  border-radius: 50%; }
+
+.main-boxes .box:first-child .icon-div, .main-boxes .box:hover .icon-div {
+  display: block;
+  position: absolute;
+  top: 3rem;
+  left: 3rem;
+  background-color: #FFFFFF;
+  padding: 5px;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s all ease-in-out; }
+  .main-boxes .box:first-child .icon-div .icon1:hover, .main-boxes .box:hover .icon-div .icon1:hover, .main-boxes .box:first-child .icon-div .icon2:hover, .main-boxes .box:hover .icon-div .icon2:hover {
+    filter: invert(45%) sepia(97%) saturate(6238%) hue-rotate(318deg) brightness(102%) contrast(101%); }
+  .main-boxes .box:first-child .icon-div:hover, .main-boxes .box:hover .icon-div:hover {
+    width: 40px;
+    height: 40px; }
+  @media (max-width: 1370px) {
+    .main-boxes .box:first-child .icon-div, .main-boxes .box:hover .icon-div {
+      width: 20px;
+      height: 20px;
+      padding: 2px;
+      top: 2rem;
+      left: 2rem; }
+      .main-boxes .box:first-child .icon-div:hover, .main-boxes .box:hover .icon-div:hover {
+        width: 23px;
+        height: 23px; } }
+
+.main-boxes .box:first-child .icon-div:nth-child(2), .main-boxes .box:hover .icon-div:nth-child(2) {
+  top: 6rem;
+  left: 3rem; }
+  @media (max-width: 1370px) {
+    .main-boxes .box:first-child .icon-div:nth-child(2), .main-boxes .box:hover .icon-div:nth-child(2) {
+      top: 4rem;
+      left: 2rem; } }
+
+.main-filter .filter-left p:hover, .main-filter .btn-filter:hover {
+  background-color: #F2F2F2;
+  border-radius: 10px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  border-color: #F2F2F2; }
+
+.page-container {
+  max-width: 1940px;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: start; }
+  .page-container .page-main-area {
+    width: 80vw; }
+    @media (max-width: 1370px) {
+      .page-container .page-main-area {
+        width: 83vw; } }
+    @media (max-width: 1024px) {
+      .page-container .page-main-area {
+        width: 98vw; } }
+    @media (max-width: 768px) {
+      .page-container .page-main-area {
+        width: 100vw;
+        padding: 0;
+        margin: 0; } }
+    .page-container .page-main-area .page-main-sec {
+      width: 100%;
+      padding: 0 3rem;
+      width: 100%; }
 
 @font-face {
   font-family: 'Avenir LT Pro 65';
@@ -2332,32 +2338,105 @@ table {
 
 .main-filter .filter-left p:hover, .main-filter .btn-filter:hover {
   background-color: #F2F2F2;
+  border-radius: 10px;
   letter-spacing: 2px;
   font-weight: 700;
   border-color: #F2F2F2; }
 
-.page-container {
-  max-width: 1940px;
-  width: 100%;
-  margin: 0 auto;
-  overflow: hidden;
+.avatar-div {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 2px solid #E7E7E7;
   display: flex;
   justify-content: center;
-  align-items: start; }
-  .page-container .page-main-area {
-    width: 80vw; }
-    @media (max-width: 1370px) {
-      .page-container .page-main-area {
-        width: 83vw; } }
-    @media (max-width: 1024px) {
-      .page-container .page-main-area {
-        width: 98vw; } }
+  align-items: center;
+  transition: 0.3s ease-in-out all; }
+  .avatar-div:hover {
+    border-color: #FF2288; }
+    .avatar-div:hover img {
+      filter: invert(45%) sepia(97%) saturate(6238%) hue-rotate(318deg) brightness(102%) contrast(101%); }
+
+.table-div {
+  padding: 0 5rem;
+  margin-top: 50px; }
+  @media (max-width: 768px) {
+    .table-div {
+      padding: 0 0.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap; } }
+  .table-div .second-page-table tbody {
+    text-align: left; }
     @media (max-width: 768px) {
-      .page-container .page-main-area {
-        width: 100vw;
-        padding: 0;
-        margin: 0; } }
-    .page-container .page-main-area .page-main-sec {
-      width: 100%;
-      padding: 0 3rem;
-      width: 100%; }
+      .table-div .second-page-table tbody {
+        display: flex;
+        justify-content: space-bewteen;
+        align-items: flex-start;
+        flex-wrap: wrap; } }
+    .table-div .second-page-table tbody .table-titles {
+      padding: 50px 0;
+      width: 75vw; }
+      @media (max-width: 768px) {
+        .table-div .second-page-table tbody .table-titles {
+          width: 45vw;
+          padding: 0 0.5rem;
+          display: flex;
+          flex-direction: column;
+          flex-wrap: wrap;
+          margin-bottom: 40px; } }
+      .table-div .second-page-table tbody .table-titles th {
+        font-size: 18px;
+        font-family: "Avenir LT Pro 55 Roman";
+        line-height: 24px;
+        color: #111111;
+        width: calc(100% / 8);
+        padding: 25px 0; }
+        @media (max-width: 1370px) {
+          .table-div .second-page-table tbody .table-titles th {
+            font-size: 14px; } }
+        @media (max-width: 768px) {
+          .table-div .second-page-table tbody .table-titles th {
+            width: 45vw;
+            display: inline-block;
+            font-size: 14px; } }
+    .table-div .second-page-table tbody .table-data {
+      width: 75vw;
+      padding: 50px 0;
+      border-top: 1px solid #E7E7E7;
+      cursor: pointer; }
+      @media (max-width: 768px) {
+        .table-div .second-page-table tbody .table-data {
+          width: 45vw;
+          padding: 0 0.5rem;
+          display: flex;
+          flex-direction: column;
+          flex-wrap: wrap;
+          padding: 0;
+          margin-bottom: 40px; } }
+      .table-div .second-page-table tbody .table-data td {
+        width: calc(100% / 8);
+        padding: 25px 0;
+        font-size: 16px;
+        font-family: "Avenir LT Pro 55 Roman";
+        line-height: 21px;
+        color: #AFAFAF; }
+        @media (max-width: 1370px) {
+          .table-div .second-page-table tbody .table-data td {
+            font-size: 14px; } }
+        @media (max-width: 768px) {
+          .table-div .second-page-table tbody .table-data td {
+            width: 45vw;
+            display: inline-block;
+            font-size: 12px;
+            line-height: 24px; } }
+      .table-div .second-page-table tbody .table-data:hover {
+        background-color: #F2F2F2; }
+    .table-div .second-page-table tbody .table-titles-resp {
+      display: none; }
+      @media (max-width: 768px) {
+        .table-div .second-page-table tbody .table-titles-resp {
+          display: inline-block; } }
+    .table-div .second-page-table tbody .table-active td {
+      color: #FF2288; }

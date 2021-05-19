@@ -1,4 +1,4 @@
-@import './tools/reset.scss';
+
 @import './tools/variables.scss';
 @import './tools/media-queries.scss';
 @import './tools/fonts.scss';
@@ -37,20 +37,19 @@
         @include flex(space-between, center);
         margin-bottom: 3rem;
         
-        .logo span {
-            @include font(24px, 'Avenir LT Pro 65', 32px);
-            @include respond(large) {
-                font-size: 20px;
-            }
-            font-weight: bold;
-            color: $color-02;
-        }
-
         .logo {
-            font-family: 'Avenir LT Pro';
+            @include font(24px, 'Avenir LT Pro', 32px);
             @include respond(large) {
-                font-size: 20px;
+                // font-size: 20px;
                 margin-right: 10px;
+            }
+            span {
+                @include font(24px, 'Avenir LT Pro 65', 32px);
+                @include respond(large) {
+                    font-size: 20px;
+                }
+                font-weight: bold;
+                color: $color-02;
             }
         }
 
@@ -69,7 +68,6 @@
             padding: 1rem 2rem 1rem 0.7rem;
             margin: 2.3rem 0;
             width: 100%;
-            transition: 0.3s ease-in all;
             @include respond(large) {
                 font-size: 12px;
                 padding: 0.7rem 2rem 0.7rem 0.7rem;
@@ -78,6 +76,7 @@
                 @include bg-active($color-03);
                 letter-spacing: 2px;
             }
+            transition: 0.3s ease-in all;
             
         }
         margin-bottom: 50px;
@@ -104,6 +103,7 @@
                     color: $color-03;
                 }
             }
+            transition: 0.3s ease-in all;
         }
 
     }
@@ -116,6 +116,7 @@
         &:hover {
             letter-spacing: 1px;
         }
+        transition: 0.3s ease-in all;
     }
     
 }

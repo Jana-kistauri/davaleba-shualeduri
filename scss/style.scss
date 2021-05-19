@@ -2,62 +2,29 @@
 @import './variables.scss';
 @import './media-queries.scss';
 @import './fonts.scss';
+@import './mixins.scss';
+@import './privates.scss';
 
-
-//  mixins
-@mixin flex($horizontal, $vertical) {
-    display: flex;
-    justify-content: $horizontal;
-    align-items: $vertical;
-}
-
-@mixin inline($horizontal) {
-    display: inline-block;
-    vertical-align: $horizontal;
-}
-
-@mixin font($size, $family, $height) {
-    font-size: $size;
-    font-family: $family;
-    line-height: $height;
-}
-
-@mixin  bg-active($bg-color) {
-    background-color: $bg-color;
-    border-radius: 10px;
-}
-// dafaruli
-
-
-%font-01 {
-    @include font(14px, 'Avenir LT Pro 55 Roman', 19px);
-}
-
-%ball {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 10px;
-    height: 10px;
-    background-color: $color-03;
-    border-radius: 50%;
-}
-
-@mixin container($pad-right) {
-    width: 100%;
-    padding: 0 $pad-right;
-}
 
 .page-container {
     max-width: 1940px;
     width: 100%;
     margin: 0 auto;
+    overflow: hidden;
     @include flex(center, start);
     // page aside styles
     .page-aside {
         width: 20vw;
         padding: 3rem 3rem 5rem 3rem;
-        // @media (max-width: 1500px) {
+
+        @include respond(large) {
+            width: 17vw;
+            padding: 1rem 1rem 5rem 1rem;
+        }
+        @include respond(medium) {
+            display: none;
+        }
+        // @media (max-width: 1349px) {
         //     padding: 1rem 1rem 5rem 1rem;
         // }
 
@@ -83,15 +50,22 @@
         .aside-top {
             @include flex(space-between, center);
             margin-bottom: 3rem;
-
+            
             .logo span {
                 @include font(24px, 'Avenir LT Pro 65', 32px);
+                @include respond(large) {
+                    font-size: 20px;
+                }
                 font-weight: bold;
                 color: $color-02;
             }
     
             .logo {
-                @include font(24px, 'Avenir LT Pro', 32px);
+                font-family: 'Avenir LT Pro';
+                @include respond(large) {
+                    font-size: 20px;
+                    margin-right: 10px;
+                }
             }
 
             .burger-icon {
@@ -100,12 +74,23 @@
         }
         // aside middle area
         .aside-middle {
+            .active {
+                @include bg-active($color-03);
+                
+            }
+            
             .navbar-ul li  {
                 padding: 1rem 2rem 1rem 0.7rem;
                 margin: 2.3rem 0;
                 width: 100%;
-                &:first-child {
+                transition: 0.3s ease-in all;
+                @include respond(large) {
+                    font-size: 12px;
+                    padding: 0.7rem 2rem 0.7rem 0.7rem;
+                }
+                &:hover {
                     @include bg-active($color-03);
+                    letter-spacing: 2px;
                 }
                 
             }
@@ -114,6 +99,10 @@
         // aside bottom area
         .aside-bottom {
             padding: 1rem 2rem 1rem 0.7rem;
+            @include respond(large) {
+                font-size: 12px;
+                padding: 1rem 0;
+            }
             h2 {
                 &:first-child {
                     @include font(12px, 'Avenir LT Pro 55 Roman', 16px);
@@ -123,19 +112,44 @@
             
             li {
                 margin: 20px 0;
+                &:hover {
+                    letter-spacing: 1px;
+                    a {
+                        color: $color-03;
+                    }
+                }
             }
 
         }
         h3 {
             cursor: pointer;
             @extend %font-01;
+            @include respond(large) {
+                font-size: 12px;
+            }
+            &:hover {
+                letter-spacing: 1px;
+            }
         }
         
     }
 
     .page-main-area {
         width: 80vw;
-        overflow: hidden;
+        
+
+        @include respond(large) {
+            width: 83vw;
+        }
+
+        @include respond(medium) {
+            width: 98vw;
+        }
+        @include respond(small) {
+            width: 100vw;
+            padding: 0;
+            margin: 0;
+        }
         .page-header {
             @include container($number-03);
             @include flex(space-between, center);
@@ -149,24 +163,62 @@
             padding-bottom: $number-01;
             margin: $number-02 $number-03 $number-02 0;
 
+            @include respond(large) {
+               margin: $number-01 $number-02 $number-01 0;
+            }
+            @include respond(small) { 
+                position: fixed;
+                top: 0;
+                left: 0;
+                padding: 8px 0;
+                margin-top: 0;
+                margin-bottom: 50px;
+                background-color: #fff;
+                z-index: 100;
+            }
+            .responsive-bars {
+                display: none;
+                cursor: pointer;
+                .burger-icon {
+                    filter: invert(11%) sepia(67%) saturate(0%) hue-rotate(104deg) brightness(89%) contrast(95%);
+                    opacity: 1;
+                    margin-right: 30px;
+                    margin-left: 15px;
+                }
+
+                .search-icon-resp {
+                    @include respond(small) {
+                        display: none;
+                    }
+                }
+
+                @include respond(medium) {
+                    display: flex;
+                }
+                
+            }
+
             .search-div {
                 @include flex(space-between, center);
                 width: 446px;
                 height: 56px;
-                // @media (max-width: 1500px) {
-                //     width: 300px;
-                //     height: $number-03;
-                // }
-                // @media (max-width: 1024px) {
-                //     width: 50px;
-                //     height: $number-02;
-                //     padding: 15px;
-                // }
+
+                @include respond(large) {
+                    width: 300px;
+                    height: $number-03;
+                }
+                
+                @include respond(medium) {
+                    display: none;
+                }
+
                 padding: 0 $number-02;
                 border-radius: 0.8rem;
                 background-color: #F8F8F8;
 
                 input {
+                    @extend %font-01;
+                    opacity: 0.5;
                     border: 0;
                     background-color: #F8F8F8;
                     outline: none;
@@ -177,46 +229,101 @@
                         @extend %font-01;
                         opacity: 0.5;                            
                     }
+
+                    @include respond(medium) {
+                        display: none;
+                    }
                 }
 
                 img {
                     cursor: pointer;
+                    opacity: 0.7;
+                    &:hover {
+                        opacity: 1;
+                    }
                 }
 
             }
             
             .header-right {
+                
                 a {
                     margin-right: $number-01;
                     &:first-child {
                         @extend %font-01;
                         color: $color-03;
+                        &:hover {
+                            letter-spacing: 2px;
+                        }
+                        @include respond(large) {
+                            font-size: 12px;
+                        }
+
+                        @include respond(small) {
+                            display: none;
+                        } 
                     }
 
                     &:nth-child(2), &:nth-child(3){
                         position: relative;
-
+                        
+                        &:hover {
+                            filter: invert(45%) sepia(97%) saturate(6238%) hue-rotate(318deg) brightness(102%) contrast(101%);
+                            .ball-div {
+                                width: 12px;
+                                height: 12px;
+                                top: -2px;
+                                right: -2px;
+                                
+                            }
+                        }
+                        
                         .ball-div {
                             @extend %ball;
                         }
                        
                     }
-
+                    
+                    img {
+                        &:last-child {
+                            margin: 0 5px;
+                            opacity: 0.7;
+                            &:hover {
+                                opacity: 1;
+                            }
+                            transition: 0.3s ease all;
+                        }
+                    }
+                    
                 }
                 
                 .btn-upload {
                     border: 0;
                     width: 129px;
                     height: 56px;
-                    // @media (max-width: 1500px) {
-                    //     width: 100px;
-                    //     height: $number-03;
-                    // }
+                    
+                   
+        
                     @include bg-active($color-03);
                     @extend %font-01;
                     color: $color-02;
                     text-transform: uppercase;
+                    transition: 0.3s all ease-in-out;
                     cursor: pointer;
+                    &:hover {
+                        color: $color-01;
+                        background-color: #FFF;
+                        border: 2px solid $color-03;
+                        letter-spacing: 2px;
+                    }
+                    @include respond(large) {
+                        width: 100px;
+                        height: $number-03;
+                        font-size: 12px;
+                    }
+                    @include respond(medium) {
+                        display: none;
+                    }
                 }
             }
 
@@ -225,111 +332,148 @@
         .page-main-sec {
             @include container($number-03);
             width: 100%;
-            // @media (max-width: 1500px) {
-            //     @include container($number-01);
-            // }
-            // @media (max-width: 1024px) {
-            //     @include container($number-01/4);
-            // }
+   
             .main-filter {
-                // @include container($number-02);
                 width: 100%;
-                @include flex(space-between, center);
+                @include flex(space-between, flex-start);
+                @include respond(small) {
+                    margin-top: 80px;
+                }
                 
-                flex-wrap: wrap;
-                // padding: ;
                 .filter-left {
                     @include flex(space-between, center);
+                    flex-wrap: wrap;
+
+                    @include respond(small) {
+                        display: none;
+                    }
+
                     p {
                         margin-right: $number-01;
                         padding: $number-01;
                         @include font(16px, 'Avenir LT Pro', 21px);
-                        cursor: pointer;
-                        &:first-child {
-                            @include bg-active($color-05);
+                        @include respond(large) {
+                            font-size: 12px;
+                            padding: 10px $number-01;
+                            margin-right: 10px;
                         }
+                        cursor: pointer;
                         
+
+                        @extend %bg-gray-hover;
+                        transition: 0.3s ease-in;
+                    }
+
+                    .filter-active {
+                        @include bg-active($color-05);
                     }
                 }
 
                 .btn-filter {
+
                     padding: $number-01;
+                    @include flex(center, center);
+                    @include font(16px, 'Avenir LT Pro', 21px);
+                    @include respond(large) {
+                        font-size: 12px;
+                        padding: 10px;
+                    }
+
+                    @media screen and (max-width: 480px) {
+                        width: 100%;
+                    }
+
                     @include bg-active($color-02);
+                    
                     border: 1px solid #D8D8D8;
+                   
+                    transition: 0.3s ease-in;
                     cursor: pointer;
                     img, p {
                         @include inline(middle);
-                        
                     }
 
                     img {
                         margin-right: 10px;
                     }
+
+                    @extend %bg-gray-hover;
                 }
             }
             
             .main-boxes {
                 @include flex(center, center);
-                
                 flex-wrap: wrap;
                 .box {
-                    // margin-right: 30px;
-                    margin-bottom: 40px;
+                    margin-top: 30px;
+                    position: relative;
                     @include flex(center, center);
                     flex-direction: column;
                     width: calc(100% / 4);
-                    text-align: center;
-                    // padding: 15px;
-                    // @media (max-width: 1500px) {
-                    //     // margin: 20px;
-                    //     width: calc(100% / 3 - 20px);
-                    // }
+                    padding: 15px;
 
-                    // @media (max-width: 1024px) {
-                    //     width: calc(100% / 2);
-                    // }
+
+                    @include respond(large) {
+                        padding: 0;
+                    }
+
+                    @include respond(medium) {
+                        width: calc(100% / 2);
+                    }
+                    
+                    @include respond(small) {
+                        width: 100%;
+                    }
+
                     &:first-child {
-                        position: relative;
-
-                        // .icon-div {
-                        //     position: absolute;
-                        //     top: $number-03;
-                        //     left: $number-03;
-                        //     background-color: $color-02;
-                        //     padding: 5px;
-                        //     width: 34px;
-                        //     height: 34px;
-                        //     border-radius: 10px;
-
-                        .icon1, .icon2 {
-                            position: absolute;
-                            left: $number-03;
-                            // z-index: 5;
-                        }
-                        .icon1 {
-                            top: $number-03;
-                        }
-                        .icon2 {
-                            top: $number-05;
-                        }
-                        // }
-                        // .icon-div {
-                        //     &:first-child {
-                        //         top: $number-03;
-                        //         left: $number-03;
-                        //     }
-                        //     &:nth-child(2) {
-                        //         top: $number-05; 
-                        //         left: $number-03;
-                        //     }
-                        // }
+                        @extend %box-icon;
+                    }
+                    .icon-div {
+                        display: none;
+                    }
+                    &:hover {
+                        @extend %box-icon;
                         
                     }
-    
+
+                    
                     p {
-                        @include font(18px, 'Avenir LT Pro', 24px)
+                        @include font(18px, 'Avenir LT Pro', 24px);
+                       
+                        height: 60px;
+                        width: 90%;
+                        text-align: start;
+
+                        &:hover {
+                            color: $color-03;
+                        }
+                        @include respond(large) {
+                            text-align: center;
+                            font-size: 12px;
+
+                            line-height: 16px;
+                            height: 50px;
+                        }
+                        
                     }
 
+                        
+                    img {
+                        &:first-child {
+                            width: 100%;
+                            @include respond(small) {
+                                width: inherit;
+                            }
+                        }
+                    }
+                            
+                        
+                    
+                    
+                    &:hover {
+                        background-color: $color-05;
+                    }
+                    transition: 0.2s ease-in-out all;
                 }
             }
 
@@ -337,6 +481,11 @@
                 width: 100%;
                 @include flex(center, center);
                 margin: 70px 0;
+
+                @include respond(small) {
+                    margin: 55px 0;
+                }
+
                 .btn-load_more {
                     width: 289px;
                     height: 56px;
@@ -344,68 +493,149 @@
                     @include font(16px, 'Avenir LT Pro 55 Roman', 21px);
                     @include bg-active($color-05);
                     color: $color-01;
-                    border: 0;
+                    border: $color-05;
                     outline: none;
                     cursor: pointer;
+                    transition: 0.3s all ease-in-out;
+                    &:hover {
+                        background-color: $color-02;
+                        border: 2px solid $color-05;
+                        letter-spacing: 2px;
+                    }
+                    @include respond(large) {
+                        width: 200px;
+                        height: 40px;
+                        padding: 0rem 24px;
+                        font-size: 12px;
+                    }
                 }
             }
             
         }
 
         .designers-section {
-            
+            width: 100%;
             @include container($number-03);
             background-color: $color-06;
             .designers-title {
                 @include flex(space-between, center);
                 padding: 50px 0 80px 0;
+
+                @include respond(large) {
+                    padding: 30px 0 50px 0;
+                }
+
                 h2 {
                     @include font(32px, 'Avenir LT Pro 55 Roman', 43px);
+                    @include respond(large) {
+                        font-size: 24px;
+                    }
+
+                    @include respond(small) {
+                        font-size: 16px;
+                        margin-right: $number-01;
+                    }
                 }
                 a  {
                     @extend %font-01;
                     opacity: 0.3;
                 }
+
+                
             }
 
             .designers-list {
-                // .designers-ul {
+
+                    width: 100%;
                     @include flex(center, center);
-                // }
+                    flex-wrap: wrap;
                 div {
+
+                    @include flex(center, center);
+                    flex-direction: column;
                     img, h3, p, button {
                         cursor: pointer;
+                        
                     }
-                    // margin-right: 40px;
                     width: calc(100% / 8);
                     text-align: center;
 
+
+                    @include respond(medium) {
+                        width: calc(100% / 4);
+                    }
+
+                    @include respond(small) {
+                        width: calc(100% / 2);
+                    }
+                    
+                    @media screen and (max-width: 480px) {
+                        width: 100%;
+                    }
+
+                    &:hover {
+                        h3 {
+                            color: $color-03;
+                        }
+                    }
                     img {
                         margin-bottom: 20px;
+                        width: 90%;
+                        opacity: 0.8;
+
+                        &:hover {
+                            opacity: 1;
+                        }
+                        @include respond(small) {
+                            width: 150px;
+                            height: 150px;
+                        }
                     }
 
                     h3 {
                         @include font(16px, 'Avenir LT Pro', 21px);
+                        @include respond(large) {
+                            font-size: 14px;
+                        }
                     }
 
                     p {
+                        max-height: 70px;
+                        height: 50px;
                         margin-top: $number-01;
                         @include font(12px, 'Avenir LT Pro', 16px);
                         letter-spacing: 0.3px;
                         opacity: 0.6;
+                        &:hover {
+                            opacity: 0.9;
+                        }
+
+                        @include respond(small) {
+                            height: 30px;
+                            margin-top: 5px;
+                        }
                     }
 
                     
                     &:nth-child(5) p {
-                        margin-top: 2rem;
+                        margin-top: 2.3rem;
                     }
 
                     button {
-                        width: 132px;
+                        max-width: 132px;
+                        width: 90%;
                         height: 44px;
                         margin: 20px 0 70px 0;
                         @include bg-active($color-06);
                         border: 1px solid $color-05;
+
+                        &:hover {
+                            @include bg-active($color-05);
+                        }
+                        @include respond(large) {
+                            margin: 0 0 60px 0;
+                        }
+                        transition: 0.3s ease-in-out all;
                     }
 
                     &:first-child button, 
@@ -414,9 +644,6 @@
                     }
                 }
 
-                // &:last-child {
-                //     margin-right: 0;
-                // }
             }
         }
         
@@ -424,43 +651,125 @@
             width: 100%;
             @include container($number-03);
             margin: 100px 0 40px 0;
+
+            @include respond(small) {
+                padding: 0;
+                margin-bottom: 15px;
+            }
+
             .footer-main {
                 @include flex(flex-start, flex-start);
-                
+                flex-wrap: wrap;
+
+                @include respond(medium) {
+                    @include flex(space-evenly, flex-start);
+
+                }
+
+                @include respond(small) {
+                    @include flex(center, flex-start);
+                }
                 .footer-links {
                     margin-right: 150px;
+                    @media screen and (max-width: 1590px) {
+                        margin-right: 100px;
+                    }
+
+                    @include respond(medium) {
+                        margin-right: 0;
+                    }
+
+                    @include respond(small) {
+                        margin: 0 60px 30px 0;
+                    }
 
                     h3 {
                         margin-bottom: 50px;
+                        @include font(16px, 'Avenir LT Pro', 21px);
+                        @include respond(medium) {
+                            margin-bottom: 30px;
+                        }
                     }
 
                     a {
                         display: block;
-                        @include font(16px, 'Avenir LT Pro 55 Roman', 21px);
+                        width: 100%;
+                        @include font(16px, 'Avenir LT Pro', 21px);
                         margin: 25px 0;
-                    }
 
+                        &:hover {
+                            color: $color-03;
+                        }
+
+                        @include respond(medium) {
+                            margin: 15px 0;
+                        }
+                    }
+                    h3, a {
+                        @include respond(large){
+                            font-size: 12px;
+                        }
+
+                        @include respond(medium){
+                            font-size: 10px;
+                        }
+                    }
                     .inside-title {
                         margin: 50px 0;
+                        @include respond(medium) {
+                            margin: 30px 0;
+                        }
                     }
                 }
             }
 
             .footer-bottom {
+                margin-top: 100px;
                 @include flex(space-between, center);
-
+                @include respond(small) {
+                    flex-direction: column;
+                }
                 .footer-social-icons {
+                    @include respond(small) {
+                        @include flex(center, center);
+                        width: 100%;
+                    }
+                    
                    a {
-                    margin-right: 30px;
-                   } 
+                        margin-right: 30px;
+                        img {
+                            opacity: 0.7;
+
+                            &:hover {
+                                opacity: 1;
+                            }
+                        }
+
+                        @include respond(large) {
+                            margin-right: 20px;
+                        }
+
+                        &:last-child {
+                            @include respond(small) {
+                                margin-right: 0;
+                            }
+                        } 
+                    }
                 }
 
                 a {
                     @include font(16px, 'Avenir LT Pro', 40px);
 
                     span {
-                        font-family: 'Avenir LT Pro 65', sans-serif;
-                        // font-weight: 800;
+                        font-family: 'Avenir LT Pro 65';
+                        font-weight: 900;
+                        
+                        &:hover {
+                            color: $color-03;
+                        }
+                    }
+                    @include respond(large) {
+                        font-size: 14px;
                     }
                 }
             }

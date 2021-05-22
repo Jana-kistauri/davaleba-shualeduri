@@ -1,10 +1,4 @@
 
-@import './tools/variables.scss';
-@import './tools/media-queries.scss';
-@import './tools/fonts.scss';
-@import './tools/mixins.scss';
-@import './tools/privates.scss';
-
 .page-header {
     @include container($number-03);
     @include flex(space-between, center);

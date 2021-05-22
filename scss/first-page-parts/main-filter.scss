@@ -9,6 +9,7 @@
 .main-filter {
     width: 100%;
     @include flex(space-between, flex-start);
+
     @include respond(small) {
         margin-top: 80px;
     }
@@ -25,15 +26,15 @@
             margin-right: $number-01;
             padding: $number-01;
             @include font(16px, 'Avenir LT Pro', 21px);
+            cursor: pointer;
+            @extend %bg-gray-hover;
+
             @include respond(large) {
                 font-size: 12px;
                 padding: 10px $number-01;
                 margin-right: 10px;
             }
-            cursor: pointer;
             
-
-            @extend %bg-gray-hover;
             transition: 0.3s ease-in;
         }
 
@@ -43,10 +44,13 @@
     }
 
     .btn-filter {
-
         padding: $number-01;
         @include flex(center, center);
         @include font(16px, 'Avenir LT Pro', 21px);
+        @include bg-active($color-02);
+        border: 1px solid #D8D8D8;
+        @extend %bg-gray-hover;
+
         @include respond(large) {
             font-size: 12px;
             padding: 10px;
@@ -56,12 +60,9 @@
             width: 100%;
         }
 
-        @include bg-active($color-02);
-        
-        border: 1px solid #D8D8D8;
-       
         transition: 0.3s ease-in;
         cursor: pointer;
+
         img, p {
             @include inline(middle);
         }
@@ -69,7 +70,5 @@
         img {
             margin-right: 10px;
         }
-
-        @extend %bg-gray-hover;
     }
 }

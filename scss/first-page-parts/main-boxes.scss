@@ -11,14 +11,13 @@
     @include flex(center, center);
     flex-wrap: wrap;
     .box {
+        width: calc(100% / 4);
         margin-top: 30px;
+        padding: 15px;
         position: relative;
         @include flex(center, center);
         flex-direction: column;
-        width: calc(100% / 4);
-        padding: 15px;
-
-
+        
         @include respond(large) {
             padding: 0;
         }
@@ -42,27 +41,24 @@
             
         }
 
-        
         p {
-            @include font(18px, 'Avenir LT Pro', 24px);
-           
             height: 60px;
             width: 90%;
+            @include font(18px, 'Avenir LT Pro', 24px);
             text-align: center;
 
             &:hover {
                 color: $color-03;
             }
             @include respond(large) {
-                text-align: center;
-                font-size: 12px;
-
-                line-height: 16px;
                 height: 50px;
+                font-size: 12px;
+                text-align: center;
+                line-height: 16px;
+                
             }
             
         }
-
             
         img {
             &:first-child {
@@ -72,9 +68,6 @@
                 }
             }
         }
-                
-            
-        
         
         &:hover {
             background-color: $color-05;

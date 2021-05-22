@@ -9,16 +9,17 @@
 .page-aside {
     width: 20vw;
     padding: 3rem 3rem 5rem 3rem;
+    background-color: $color-01;
+
     @include respond(large) {
         width: 17vw;
         padding: 1rem 1rem 5rem 1rem;
     }
+
     @include respond(medium) {
         display: none;
     }
     
-    background-color: $color-01;
-
     a, h2, h3 {
         color: $color-02;
     }
@@ -38,17 +39,19 @@
         
         .logo {
             @include font(24px, 'Avenir LT Pro', 32px);
+
             @include respond(large) {
-                // font-size: 20px;
                 margin-right: 10px;
             }
+
             span {
                 @include font(24px, 'Avenir LT Pro 65', 32px);
+                font-weight: bold;
+                color: $color-02;
+
                 @include respond(large) {
                     font-size: 20px;
                 }
-                font-weight: bold;
-                color: $color-02;
             }
         }
 
@@ -56,37 +59,43 @@
             cursor: pointer;
         }
     }
+
     // aside middle area
     .aside-middle {
+        margin-bottom: 50px;
+
         .active {
             @include bg-active($color-03);
-            
         }
         
         .navbar-ul li  {
+            width: 100%;
             padding: 1rem 2rem 1rem 0.7rem;
             margin: 2.3rem 0;
-            width: 100%;
+            
             @include respond(large) {
                 font-size: 12px;
                 padding: 0.7rem 2rem 0.7rem 0.7rem;
             }
+
             &:hover {
                 @include bg-active($color-03);
                 letter-spacing: 2px;
             }
+
             transition: 0.3s ease-in all;
-            
         }
-        margin-bottom: 50px;
     }
+
     // aside bottom area
     .aside-bottom {
         padding: 1rem 2rem 1rem 0.7rem;
+
         @include respond(large) {
             font-size: 12px;
             padding: 1rem 0;
         }
+
         h2 {
             &:first-child {
                 @include font(12px, 'Avenir LT Pro 55 Roman', 16px);
@@ -104,17 +113,20 @@
             }
             transition: 0.3s ease-in all;
         }
-
     }
+
     h3 {
-        cursor: pointer;
         @extend %font-01;
-        @include respond(large) {
-            font-size: 12px;
-        }
+        cursor: pointer;
+
         &:hover {
             letter-spacing: 1px;
         }
+
+        @include respond(large) {
+            font-size: 12px;
+        }
+        
         transition: 0.3s ease-in all;
     }
     

@@ -9,10 +9,9 @@
 .avatar-div {
     width: 56px;
     height: 56px;
+    @include flex(center, center);
     border-radius: 50%;
     border: 2px solid $color-08;
-    @include flex(center, center);
-
 
     &:hover {
         img {
@@ -32,6 +31,7 @@
         @include flex(center, center);
         flex-wrap: wrap;
     }
+
     .second-page-table {
         
         tbody {
@@ -43,9 +43,9 @@
             }
 
             .table-titles {
-                
-                padding: 50px 0;
                 width: 75vw;
+                padding: 50px 0;
+                
                 @include respond(small) {
                     width: 45vw;
                     padding: 0 0.5rem;
@@ -54,11 +54,12 @@
                     flex-wrap: wrap;
                     margin-bottom: 40px;
                 }
+
                 th {
-                    @include font(18px, 'Avenir LT Pro 55 Roman', 24px);
-                    color: $color-04;
                     width: calc(100% / 8);
                     padding: 35px 0;
+                    @include font(18px, 'Avenir LT Pro 55 Roman', 24px);
+                    color: $color-04;
 
                     @include respond(large) {
                         font-size: 14px;
@@ -78,6 +79,7 @@
                 padding: 50px 0;
                 border-top: 1px solid $color-08;
                 cursor: pointer;
+
                 @include respond(small) {
                     width: 45vw;
                     padding: 0 0.5rem;
@@ -87,6 +89,7 @@
                     padding: 0;
                     margin-bottom: 40px;
                 }
+
                 td {
                     width: calc(100% / 8);
                     padding: 35px 0;
@@ -103,16 +106,19 @@
                         line-height: 24px;
                     }
                 }
+
                 &:hover {
                     background-color: $color-05;
                 }
             }
+
             .table-titles-resp {
                 display: none;
                 @include respond(small) {
                     display: inline-block;
                 }
             }
+            
             .table-active {
                 td {
                     color: $color-03;

@@ -9,15 +9,13 @@
 .page-container {
     max-width: 1940px;
     width: 100%;
+    @include flex(center, start);
     margin: 0 auto;
     overflow: hidden;
-    @include flex(center, start);
-    // page aside styles
-    
 
+    // page aside styles
     .page-main-area {
         width: 80vw;
-        
 
         @include respond(large) {
             width: 83vw;
@@ -31,8 +29,7 @@
             padding: 0;
             margin: 0;
         }
-        
-
+    
         .page-main-sec {
             @include container($number-03);
             width: 100%;

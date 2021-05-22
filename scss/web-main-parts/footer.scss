@@ -22,14 +22,15 @@
 
         @include respond(medium) {
             @include flex(space-evenly, flex-start);
-
         }
 
         @include respond(small) {
             @include flex(center, flex-start);
         }
+
         .footer-links {
             margin-right: 150px;
+
             @media screen and (max-width: 1590px) {
                 margin-right: 100px;
             }
@@ -45,17 +46,18 @@
             h3 {
                 margin-bottom: 50px;
                 @include font(16px, 'Avenir LT Pro', 21px);
+
                 @include respond(medium) {
                     margin-bottom: 30px;
                 }
             }
 
             a {
-                display: block;
                 width: 100%;
-                @include font(16px, 'Avenir LT Pro', 21px);
+                display: block;
                 margin: 25px 0;
-
+                @include font(16px, 'Avenir LT Pro', 21px);
+                
                 &:hover {
                     color: $color-03;
                 }
@@ -64,6 +66,7 @@
                     margin: 15px 0;
                 }
             }
+
             h3, a {
                 @include respond(large){
                     font-size: 12px;
@@ -73,8 +76,10 @@
                     font-size: 10px;
                 }
             }
+
             .inside-title {
                 margin: 50px 0;
+
                 @include respond(medium) {
                     margin: 30px 0;
                 }
@@ -85,10 +90,13 @@
     .footer-bottom {
         margin-top: 100px;
         @include flex(space-between, center);
+
         @include respond(small) {
             flex-direction: column;
         }
+
         .footer-social-icons {
+
             @include respond(small) {
                 @include flex(center, center);
                 width: 100%;
@@ -96,6 +104,7 @@
             
            a {
                 margin-right: 30px;
+
                 img {
                     opacity: 0.7;
 
@@ -127,6 +136,7 @@
                     color: $color-03;
                 }
             }
+            
             @include respond(large) {
                 font-size: 14px;
             }

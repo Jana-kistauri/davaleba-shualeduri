@@ -10,6 +10,8 @@
     width: 100%;
     @include container($number-03);
     background-color: $color-06;
+
+    // title styles
     .designers-title {
         @include flex(space-between, center);
         padding: 50px 0 80px 0;
@@ -20,10 +22,10 @@
 
         h2 {
             @include font(32px, 'Avenir LT Pro 55 Roman', 43px);
+
             @include respond(large) {
                 font-size: 24px;
             }
-
             @include respond(small) {
                 font-size: 16px;
                 margin-right: $number-01;
@@ -33,37 +35,33 @@
             @extend %font-01;
             opacity: 0.3;
         }
-
-        
     }
 
+    // designers list styles
     .designers-list {
-
             width: 100%;
             @include flex(center, center);
             flex-wrap: wrap;
-        div {
 
+        div {
+            width: calc(100% / 8);
             @include flex(center, center);
             flex-direction: column;
-            img, h3, p, button {
-                cursor: pointer;
-                
-            }
-            width: calc(100% / 8);
             text-align: center;
-
 
             @include respond(medium) {
                 width: calc(100% / 4);
             }
-
             @include respond(small) {
                 width: calc(100% / 2);
             }
-            
             @media screen and (max-width: 480px) {
                 width: 100%;
+            }
+
+
+            img, h3, p, button {
+                cursor: pointer;
             }
 
             &:hover {
@@ -72,13 +70,15 @@
                 }
             }
             img {
-                margin-bottom: 20px;
+                
                 width: 90%;
+                margin-bottom: 20px;
                 opacity: 0.8;
 
                 &:hover {
                     opacity: 1;
                 }
+     
                 @include respond(small) {
                     width: 150px;
                     height: 150px;
@@ -87,6 +87,7 @@
 
             h3 {
                 @include font(16px, 'Avenir LT Pro', 21px);
+
                 @include respond(large) {
                     font-size: 14px;
                 }
@@ -125,6 +126,7 @@
                 &:hover {
                     @include bg-active($color-05);
                 }
+
                 @include respond(large) {
                     margin: 0 0 60px 0;
                 }
